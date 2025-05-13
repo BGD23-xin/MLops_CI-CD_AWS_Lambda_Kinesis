@@ -23,19 +23,19 @@ jobs:
           python-version: 3.11
 
       - name: Install pipenv and dependencies
-        working-directory: "Continuous_Integration/prepation"
+        working-directory: "Continuous_Integration/preparation"
         run:
           pip install pipenv && pipenv install --dev
 
 
 
       - name: Run tests with pipenv
-        working-directory: "Continuous_Integration/prepation/integration_test"
+        working-directory: "Continuous_Integration/preparation/integration_test"
         run:
           pipenv run pytest tests/
 
       - name: pylint
-        working-directory: "Continuous_Integration/prepation"
+        working-directory: "Continuous_Integration/preparation"
         run:
           pipenv run pylint --recursive=y .
 
@@ -47,7 +47,7 @@ jobs:
           aws-region: ${{ env.AWS_DEFAULT_REGION }}
 
       - name: Integration Test
-        working-directory: 'Continuous_Integration/prepation/integration_test'
+        working-directory: 'Continuous_Integration/preparation/integration_test'
         run: |
           . run.sh
 
