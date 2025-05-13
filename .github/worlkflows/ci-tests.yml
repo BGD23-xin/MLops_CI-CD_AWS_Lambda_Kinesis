@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   pull_request:
     branches:
-      - 'develop'
+      - 'main'
     paths:
       - 'Continuous_Integration/**'
       - 'Continuous_Deployment/**'
