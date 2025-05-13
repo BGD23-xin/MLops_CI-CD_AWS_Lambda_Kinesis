@@ -14,7 +14,7 @@ services:
       KINESIS_ENDPOINT_URL: http://kinesis:4566/
     volumes:
       - ./env:/app/env
-  
+
   kinesis:
     image: localstack/localstack
     ports:

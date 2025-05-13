@@ -75,5 +75,3 @@ if [ ${ERROR_CODE} != 0 ]; then
     docker-compose down
     exit ${ERROR_CODE}
 fi
-
-

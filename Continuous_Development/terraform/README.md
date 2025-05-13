@@ -19,7 +19,7 @@ sudo apt-get update && sudo apt-get install terraform
 
 there are two files of variables for two situations(production and test)
 ```bash
-terraform plan -var-file="vars/prod.tfvars" 
+terraform plan -var-file="vars/prod.tfvars"
 ```
 or
 

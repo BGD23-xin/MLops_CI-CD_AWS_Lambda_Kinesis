@@ -177,6 +177,7 @@ cython_debug/
 Continuous_Integration/preparation/**/*.env
 .vscode/
 Continuous_Integration/preparation/mlflow.db
+Continuous_Integration/preparation/model.ipynb
 
 
 ##Continuous development
@@ -186,4 +187,3 @@ Continuous_Development/terraform/vars/prod.tfvars
 
 Continuous_Development/terraform/terraform.tfstate
 Continuous_Development/terraform/terraform.backup
-

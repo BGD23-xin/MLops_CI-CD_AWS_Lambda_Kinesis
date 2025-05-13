@@ -1,9 +1,10 @@
 import os
 import json
 import base64
-import pandas as pd
+
 import boto3
 import mlflow
+import pandas as pd
 
 
 def get_model_location(run_id):
@@ -19,11 +20,13 @@ def get_model_location(run_id):
     model_location = f's3://{model_bucket}/{experiment_id}/{run_id}/artifacts/model'
     return model_location
 
+
 def load_model(run_id):
     """Load the model from the specified run_id."""
     model_path = get_model_location(run_id)
     model = mlflow.pyfunc.load_model(model_path)
     return model
+
 
 def base64_decode(encoded_data):
     """Decode the base64 encoded data."""
@@ -32,10 +35,9 @@ def base64_decode(encoded_data):
     return ride_event
 
 
-
-
 class ModelService:
     """Model service class to handle predictions and callbacks."""
+
     def __init__(self, model, model_version=None, callbacks=None):
         self.model = model
         self.model_version = model_version
@@ -82,13 +84,15 @@ class ModelService:
 
         return {'predictions': predictions_events}
 
+
 class Kinesiscallbacks:
     """Kinesis callback class to send predictions to a Kinesis stream."""
-    def __init__(self, kinesis_client,prediction_stream_name :str):
+
+    def __init__(self, kinesis_client, prediction_stream_name: str):
         self.kinesis_client = kinesis_client
-        self.prediction_stream_name  = prediction_stream_name
+        self.prediction_stream_name = prediction_stream_name
         self.kinesis_client = kinesis_client
-    
+
     def put_record(self, prediction_event):
         """Put a record into the Kinesis stream."""
         ride_id = prediction_event['prediction']['ride_id']
@@ -96,7 +100,7 @@ class Kinesiscallbacks:
         self.kinesis_client.put_record(
             StreamName=self.prediction_stream_name,
             Data=json.dumps(prediction_event),
-            PartitionKey=str(ride_id)
+            PartitionKey=str(ride_id),
         )
 
 

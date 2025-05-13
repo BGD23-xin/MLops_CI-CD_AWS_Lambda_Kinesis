@@ -1,9 +1,10 @@
 import os
 import json
 import base64
-import pandas as pd
+
 import boto3
 import mlflow
+import pandas as pd
 
 
 def get_model_location(run_id):

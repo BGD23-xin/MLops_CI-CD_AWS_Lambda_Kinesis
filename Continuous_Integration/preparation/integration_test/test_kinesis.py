@@ -40,10 +40,7 @@ pprint(actual_record)
 expected_record = {
     "model": "AAPL_Stock_Prediction",
     "version": "v2",
-    "prediction": {
-                'ride_duration': 1.0,
-                'ride_id': 112
-    },
+    "prediction": {'ride_duration': 1.0, 'ride_id': 112},
 }
 
 diff = DeepDiff(actual_record, expected_record, significant_digits=1)
