@@ -179,7 +179,6 @@ Continuous_Integration/preparation/**/*.env
 Continuous_Integration/preparation/mlflow.db
 Continuous_Integration/preparation/model.ipynb
 
-
 ##Continuous development
 Continuous_Development/terraform/.terraform/
 
@@ -187,3 +186,7 @@ Continuous_Development/terraform/vars/prod.tfvars
 
 Continuous_Development/terraform/terraform.tfstate
 Continuous_Development/terraform/terraform.backup
+
+Continuous_Development/terraform/backend/.terraform
+Continuous_Development/terraform/backend/terraform.tfstate
+Continuous_Development/terraform/backend/terraform.lock.hcl

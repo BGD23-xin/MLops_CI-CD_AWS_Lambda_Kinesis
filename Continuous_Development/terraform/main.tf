@@ -5,6 +5,13 @@ terraform {
         version = "5.94.1"
         }
     }
+    backend"s3" {
+      bucket = "tf-state-mlops-test"
+      key     = "mlops-test-stg.tfstate"
+      region  = "eu-west-3"
+      encrypt = true
+    }
+
 }
 
 provider "aws" {

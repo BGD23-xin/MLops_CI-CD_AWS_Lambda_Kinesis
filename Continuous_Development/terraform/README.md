@@ -1,4 +1,6 @@
 # command
+
+### installation of terraform
 ```bash
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
 ```
@@ -17,6 +19,10 @@ sudo apt-get update && sudo apt-get install terraform
 
 ```
 
+Attention: if you want to use a s3 bucket as a backup workflows, need to creat firstly a s3 bucket and then you can use it in your main.tf.
+So in this project, i use the file in directory `backend` to create a backup folder
+
+### plan and apply
 there are two files of variables for two situations(production and test)
 ```bash
 terraform plan -var-file="vars/prod.tfvars"
