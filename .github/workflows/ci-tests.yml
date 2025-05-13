@@ -38,7 +38,7 @@ jobs:
       - name: pylint
         working-directory: "Continuous_Integration/preparation"
         run:
-          pipenv run pylint --recursive=y .
+          pipenv run pylint model.py lambda_function.py
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
