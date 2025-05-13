@@ -1,0 +1,24 @@
+[tool.pylint."MESSAGES CONTROL"]
+
+
+disable=[
+        "missing-module-docstring",
+        "too-few-public-methods",
+        "wrong-import-order",
+        "unused-argument"
+        ]
+
+[tool.pylint.format]
+max-line-length = 200
+
+[tool.pylint.master]
+ignore-patterns = ["py_test.py"]
+
+
+[tool.black]
+line-length = 100
+skip-string-normalization = true
+
+[tool.isort]
+multi_line_output = 3
+length_sort = true

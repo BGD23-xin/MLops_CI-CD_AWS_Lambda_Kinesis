@@ -172,3 +172,18 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+##Continuous Integration
+Continuous_Integration/preparation/**/*.env
+.vscode/
+Continuous_Integration/preparation/mlflow.db
+
+
+##Continuous development
+Continuous_Development/terraform/.terraform/
+
+Continuous_Development/terraform/vars/prod.tfvars
+
+Continuous_Development/terraform/terraform.tfstate
+Continuous_Development/terraform/terraform.backup
+
