@@ -29,8 +29,11 @@ update_env_var() {
   fi
 }
 
-AWS_ACCESS_KEY_ID=$(grep 'aws_access_key_id' ~/.aws/credential/aws.ini | cut -d'=' -f2 | xargs)
-AWS_SECRET_ACCESS_KEY=$(grep 'aws_secret_access_key' ~/.aws/credential/aws.ini | cut -d'=' -f2 | xargs)
+# AWS_ACCESS_KEY_ID=$(grep 'aws_access_key_id' ~/.aws/credential/aws.ini | cut -d'=' -f2 | xargs)
+# AWS_SECRET_ACCESS_KEY=$(grep 'aws_secret_access_key' ~/.aws/credential/aws.ini | cut -d'=' -f2 | xargs)
+AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}"
+AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}"
+
 TEST_RUN=True
 RUN_ID=v2
 PREDICTIONS_STREAM_NAME=ride_predictions
